@@ -1,0 +1,4 @@
+.text_popup {
+    position: absolute;
+    z-index: 20000;
+}

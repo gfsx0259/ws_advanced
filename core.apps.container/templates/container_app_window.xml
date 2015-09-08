@@ -1,0 +1,13 @@
+<tpl name="container_app_window">
+    <div id="window">
+        <div id="app_css_margin" class="app_css_margin">
+            <div id="app_css_box">
+                <div class="container_app_inner">
+                    <div id="caption" class="container_app_caption"></div>
+                    <div id="content" class="container_app_content"></div>
+                    <div class="container_app_footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</tpl>

@@ -1,0 +1,9 @@
+.dialog_prompt {
+    width: 600px;
+    height: 50px;
+}
+
+    .dialog_prompt .form_row {
+        padding: 15px 5px;
+        margin: 0;
+    }

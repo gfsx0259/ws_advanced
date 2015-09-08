@@ -1,0 +1,100 @@
+<tpl name="shooting_scores">
+    <div class="filters" id="filters">
+        <div class="input_wrapper">
+            <input type="text" id="inp_q" events="onenter=fillTable"/>
+            <div class="clear" events="onclick=onClearQClick"></div>
+        </div>
+        <span>From</span>
+        <div class="input_wrapper">
+            <select id="inp_date_start" events="onchange=onDateStartChanged"/>
+        </div>
+        <span>To</span>
+        <div class="input_wrapper">
+            <select id="inp_date_end" events="onchange=onDateEndChanged"/>
+        </div>
+        <span>Group</span>
+        <div class="input_wrapper">
+            <select id="inp_group_results" events="onchange=onGroupResultsChanged">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="table" class="table"></div>
+
+
+    <div class="graphs_box" id="graphs1">
+        <div class="graphs_box_col2">
+            <div class="box_caption">
+                <div class="title" id="chart0_title"></div>
+            </div>
+            <div id="chart0" class="box_content"></div>
+        </div>
+        <div class="graphs_box_col2">
+            <div class="box_caption">
+                <div class="title" id="chart1_title"></div>
+            </div>
+            <div id="chart1" class="box_content"></div>
+        </div>
+    </div>
+
+
+
+    <div class="graphs_box" id="graphs2">
+        <div class="graphs_box_col3">
+            <div class="box_caption">
+                <div class="title">Tightest Group for:</div>
+                <div class="input_wrapper">
+                    <select id="inp_chart2" events="onchange=updateChart2">
+                        <option value="action">Action</option>
+                        <option value="barrel">Barrel</option>
+                        <option value="powder">Powder</option>
+                        <option value="gunsmith">Gunsmith</option>
+                        <option value="caliber">Caliber</option>
+                        <option value="primer">Primer</option>
+                        <option value="bullets">Bullets</option>
+                    </select>
+                </div>
+            </div>
+            <div id="chart2" class="box_content"></div>
+        </div>
+        <div class="graphs_box_col3">
+            <div class="box_caption">
+                <div class="title">Highest Score for:</div>
+                <div class="input_wrapper">
+                    <select id="inp_chart3" events="onchange=updateChart3">
+                        <option value="action">Action</option>
+                        <option value="barrel">Barrel</option>
+                        <option value="powder">Powder</option>
+                        <option value="gunsmith">Gunsmith</option>
+                        <option value="caliber">Caliber</option>
+                        <option value="primer">Primer</option>
+                        <option value="bullets">Bullets</option>
+                    </select>
+                </div>
+            </div>
+            <div id="chart3" class="box_content"></div>
+        </div>
+
+        <div class="graphs_box_col3">
+            <div class="box_caption">
+                <div class="title">Ranking: </div>
+                <div class="input_wrapper">
+                    <select id="inp_ranking" events="onchange=updateRanking">
+                        <option value="name">Shooter</option>
+                        <option value="action">Action</option>
+                        <option value="barrel">Barrel</option>
+                        <option value="powder">Powder</option>
+                        <option value="gunsmith">Gunsmith</option>
+                        <option value="caliber">Caliber</option>
+                        <option value="primer">Primer</option>
+                        <option value="bullets">Bullets</option>
+                    </select>
+                </div>
+            </div>
+            <div id="ranking" class="box_content ranking"></div>
+        </div>
+    </div>
+
+</tpl>

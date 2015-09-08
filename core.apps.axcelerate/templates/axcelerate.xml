@@ -1,0 +1,194 @@
+<tpl name="axcelerate_register">
+    <div id="axcelerate_register" class="arial">
+        <div id="course_datepicker" class="datepicker">
+            <div class="course_datepicker_head" style="text-align: center">
+                <a id="course_datepicker_back" class="fl">Back</a>
+                <a id="course_datepicker_next" class="fr">Next</a>
+                <div class="w_50 m_auto">
+                    <a id="course_datepicker_date">Month, Year</a>
+                </div>
+            </div>
+            <table class="datepicker_table">
+                <thead>
+                    <tr>
+                        <th>Su</th>
+                        <th>Mo</th>
+                        <th>Tu</th>
+                        <th>We</th>
+                        <th>Th</th>
+                        <th>Fr</th>
+                        <th>Sa</th>
+                    </tr>
+                </thead>
+                <tbody id="course_datepicker_table"></tbody>
+            </table>
+        </div>
+
+
+        <div class="form-row">
+            <label for="course_date" class="w_100">Course date</label>
+            <select id="course_date">
+                <option>Dates downloading...</option>
+            </select>
+            <!-- <input type="text" class="text" id="course_date" events="onfocus=onDateFocus"/> -->
+            <input type="hidden" id="course_id"/>
+            <input type="hidden" id="course_time"/>
+            <input type="hidden" id="course_instance_id"/>
+            <input type="hidden" id="course_title"/>
+            <input type="hidden" id="course_type"/>
+            <input type="hidden" id="course_amount" />
+        </div>
+        <!-- <div class="form-row" id="course_have_account">
+            <label for="aXcelerate_account" class="w_100">Do you have an aXcelerate account?</label>
+            <input type="radio" name="aXcelerate_account" value="Yes"/> Yes
+            <input type="radio" name="aXcelerate_account" value="No"/> No
+        </div> -->
+    </div>
+
+    <div id="axcelerate_new_user" class="arial">
+        <div class="form-row">
+            <label class="w_100">Name</label>
+            <select class="fl w_5" id="course_title">
+                <option>Mr</option>
+                <option>Ms</option>
+                <option>Mrs</option>
+            </select>
+            <div class="input_block w_17 fl pr_5">
+                <input type="text" class="text w_100" id="course_first_name"/>
+                <small>First name</small>
+            </div>
+            <div class="input_block w_17 fl">
+                <input type="text" class="text w_100" id="course_last_name"/>
+                <small>Last name</small>
+            </div>
+        </div>
+        <div class="form-row">
+            <label for="gender" class="w_100">Gender</label>
+            <select id="course_gender">
+                <option>Male</option>
+                <option>Fe-mail</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <label class="w_100">Address</label>
+            <div class="input_block w_45">
+                <input type="text" class="text w_100" id="course_address_street"/>
+                <small>Street</small>
+            </div>
+            <div class="input_block w_45">
+                <input type="text" class="text w_100" id="course_address_line2"/>
+                <small>Address Line 2</small>
+            </div>
+            <div class="input_block w_45">
+                <input type="text" class="text w_100" id="course_address_town"/>
+                <small>Town/City</small>
+            </div>
+            <div class="input_block w_11 fl pr_5">
+                <input type="text" class="text w_100" id="course_address_state"/>
+                <small>State</small>
+            </div>
+            <div class="input_block w_11 fl pr_5">
+                <input type="text" class="text w_100" id="course_address_post_code"/>
+                <small>Area/Post code</small>
+            </div>
+            <div class="input_block w_11 fl">
+                <select id="course_address_country">
+                    <option>Australia</option>
+                </select>
+                <small>Country</small>
+            </div>
+        </div>
+        <div class="form-row">
+            <label class="w_100">Contact</label>
+            <div class="input_block w_20 fl pr_5">
+                <input type="text" class="text w_100" id="course_contact_phone"/>
+                <small>Phone</small>
+            </div>
+            <div class="input_block w_20 fl">
+                <input type="text" class="text w_100" id="course_contact_mobile"/>
+                <small>Mobile</small>
+            </div>
+            <div class="input_block w_45">
+                <input type="text" class="text w_100" id="course_contact_email"/>
+                <small>Email</small>
+            </div>
+        </div>
+        <div class="form-row" id="course_cost" style="display: none">
+            <label class="w_100">Course cost</label>
+            <br/>
+            <span id="course_cost1"></span><span id="course_participants"></span>
+        </div>
+    </div>
+    <!-- <div id="axcelerate_current_user" class="arial" style="display: none">
+        <div class="form-row">
+            <label for="course_contact_id">Enter your aXcelerate Id</label>
+            <input type="text" id="course_contact_id"/>
+        </div>
+        <div class="form-row">
+            <label class="w_100">Course cost</label>
+            <span>$</span><span id="course_cost2"></span><span> inc GST</span>
+        </div>
+        <div class="form-row">
+            <button id="course_submit" class="submit" events="onclick=onCurrentUserRegisterClick">REGISTER NOW</button>
+        </div>
+    </div> -->
+    <div id="axcelerate_registrate_success" style="font-family: Arial;">
+        <div id="axcelerate_payment">
+            <div class="form-row">
+                <label for="course_date" class="w_100">Payment form</label>
+                <div class="input_block w_20 fl">
+                    <input type="text" class="text w_100" id="payment_cardholder"/>
+                    <small>Name on credit card</small>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="form-row">
+                <div class="input_block w_20 fl">
+                    <input type="text" class="text w_100" id="payment_card_number" events="onchange=onCardNumberChange"/>
+                    <small>Credit card number</small>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="form-row">
+                <div class="input_block w_10 fl">
+                    <select id="payment_exp_month" class="w_100">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+                    <small>Expiration month</small>
+                </div>
+                <span style="float: left; margin: 0 10px;">/</span>
+                <div class="input_block w_10 fl" style="margin-right: 20px;">
+                    <select id="payment_exp_year" class="w_100">
+                    </select>
+                    <small>Expiration year</small>
+                </div>
+                <div class="input_block w_10 fl">
+                    <input type="text" class="text w_100" id="payment_cvv"/>
+                    <small>CVV</small>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="form-row">
+                <button id="payment_submit" class="submit" events="onclick=onPaymentClick">REGISTER NOW</button>
+            </div>
+        </div>
+        <div class="form-row" style="display: none" id="course_registration_wait">
+            <p>Please wait...</p>
+        </div>
+        <div class="form-row" style="display: none" id="course_succefffull_reg">
+            <p>You have successfully registered. Your Student ID is <span id="course_learner_id"></span>.</p>
+        </div>
+    </div>
+    <span id="msg"></span>
+</tpl>

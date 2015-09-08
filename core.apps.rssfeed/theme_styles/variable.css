@@ -1,0 +1,75 @@
+/*rf1|rf*/
+.channel {
+    background: #fff;
+}
+/*rf2|rf*/
+.channel_img_box {
+    margin-bottom: 20px;
+}
+/*rf3|rf*/
+.channel_img_box img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+/*rf4|rf*/
+.channel_img_box a {
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+/*rf5|rf*/
+.channel_img_box a:hover {
+}
+/*rf6|rf*/
+.channel_info_box {
+    margin-bottom: 20px;
+}
+/*rf7|rf*/
+.channel_info_box a {
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+/*rf8|rf*/
+.channel_info_box a:hover {
+}
+/*rf9|rf*/
+.channel_info_box .description {
+    text-align: justify;
+}
+/*rf10|rf*/
+.items {
+}
+/*rf11|rf*/
+.items .item {
+    margin-bottom: 20px;
+}
+/*rf12|rf*/
+.items .item a {
+    width: auto;
+    display: block;
+    border-bottom: 1px solid #bbb;
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    padding: 5px;
+}
+/*rf13|rf*/
+.items .item a:hover {
+    background: #EEE; 
+    text-decoration: none;
+}
+/*rf14|rf*/
+.items .item .date {
+    text-align: right;
+    font-size: 75%;
+    color: #bbb;
+    margin-bottom: 5px;
+}
+/*rf15|rf*/
+.items .item .description {
+    text-align: justify;
+}

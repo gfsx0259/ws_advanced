@@ -1,0 +1,13 @@
+<tpl name="dialog_prompt">
+    <div class="dialog_prompt">
+        <div class="form_row">
+            <label id="label"></label>
+            <wsc_text id="inp_text"/>
+        </div>
+    </div>
+
+    <div class="popup_buttons"><div class="popup_buttons_wrapper">
+        <wsc_button class="float_right" title=" Cancel " events="onclick=onCancelClick"/>
+        <wsc_button class="float_right" title=" Ok " events="onclick=onOkClick"/>
+    </div></div>
+</tpl>

@@ -1,0 +1,33 @@
+.msg_container_empty {
+    font: bold 20px Arial;
+    text-transform: uppercase;
+    text-align: center;
+    overflow: hidden;
+    color: #999;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.container_drop_overlay {
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30);
+    opacity: 0.3;
+}
+
+.container_border {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px dashed #DDD;
+}

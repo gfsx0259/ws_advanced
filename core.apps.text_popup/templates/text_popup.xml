@@ -1,0 +1,20 @@
+<tpl name="text_popup">
+    <div id="popup_wrapper">
+        <div class="text_popup" id="window">
+            <div class="text_popup_content" id="content"></div>
+
+            <div class="control_move" events="onmousedown=startMove">MOVE</div>
+            <div class="control_close" events="onclick=hide">CLOSE</div>
+            <div class="control_resize" events="onmousedown=startResize" style="display: none"></div>
+
+            <div class="border_l"></div>
+            <div class="border_r"></div>
+            <div class="border_t"></div>
+            <div class="border_tl"></div>
+            <div class="border_tr"></div>
+            <div class="border_b"></div>
+            <div class="border_bl"></div>
+            <div class="border_br"></div>
+        </div>
+    </div>
+</tpl>

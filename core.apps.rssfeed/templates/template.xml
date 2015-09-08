@@ -1,0 +1,9 @@
+<tpl name="rssfeed">
+    <div class="channel">
+        <div class="channel_img_box" id="img_box"></div>
+        <div class="channel_info_box" id="info_box"></div>
+        <div id="pager_top"></div>
+        <div class="items" id="rss"></div>
+        <div id="pager_bottom"></div>
+    </div>
+</tpl>

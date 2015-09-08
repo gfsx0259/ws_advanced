@@ -1,0 +1,119 @@
+/*sc1|*/
+.filters {
+    height: 40px;
+}
+
+/*sc2|*/
+.filters .input_wrapper {
+    float: left;
+    position: relative;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    background: #fff;
+}
+
+/*sc3|*/
+.filters span {
+    float: left;
+    padding: 5px 5px 0 0;
+    text-align: right;
+    width: 80px;
+}
+
+/*sc4|*/
+.filters input[type="text"] {
+    border: 0;
+    width: 300px;
+    margin: 0;
+    padding: 5px;
+    background: transparent;
+}
+
+/*sc5|*/
+.filters select {
+    border: 0;
+    width: 100px;
+    margin: 0;
+    padding: 5px;
+    background: transparent;
+}
+
+/*sc6|*/
+.filters .clear {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    background: url(/static/wsc/clear_text.png);
+    z-index: 5;
+}
+
+
+/*sc7|*/
+.table {
+}
+
+/*sc8|*/
+.graphs_box {
+    padding-top: 10px;
+    overflow: hidden;
+    zoom: 1;
+}
+
+/*sc9|*/
+.graphs_box_col2 {
+    float: left;
+    width: 50%;
+}
+
+/*sc10|*/
+.graphs_box_col3 {
+    float: left;
+    width: 33%;
+}
+
+/*sc11|*/
+.box_caption {
+    height: 30px;
+}
+
+
+/*sc12|*/
+.box_caption .title {
+    float: left;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+/*sc13|*/
+.box_caption .input_wrapper {
+    float: left;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    background: #fff;
+    margin-left: 5px;
+}
+/*sc14|*/
+.box_caption select {
+     border: 0;
+     width: 100px;
+     margin: 0;
+     padding: 5px;
+     background: transparent;
+}
+
+/*sc15|*/
+.box_content {
+    height: 200px;
+}
+
+
+/*sc16|*/
+.ranking ol {
+}
+
+/*sc17|*/
+.ranking li {
+}

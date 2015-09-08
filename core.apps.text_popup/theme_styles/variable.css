@@ -1,0 +1,48 @@
+/*text_popup|Popup box*/
+.text_popup {
+    overflow: visible;
+    background: #FFF;
+}
+
+/*text_popup_content|Popup content */
+.text_popup_content {
+    padding-top: 30px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    text-align: justify;
+}
+
+
+/*control_move|Move link*/
+.text_popup .control_move {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    right: 60px;
+    width: 45px;
+    color: #666;
+    cursor: move;
+    font-weight: bold;
+}
+/*control_move:hover|Move link mouse over*/
+.text_popup .control_move:hover {
+    color: #000;
+}
+
+/*control_close|Close link*/
+.text_popup .control_close {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    right: 0px;
+    width: 45px;
+    color: #666;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/*control_close:hover|Close link mouse over*/
+.text_popup .control_close:hover {
+    color: #000;
+}

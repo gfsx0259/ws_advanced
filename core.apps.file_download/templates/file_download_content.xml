@@ -1,0 +1,30 @@
+<tpl name="file_download_content">
+
+    <table class="download_box" id="file_info">
+        <tr>
+            <td class="download_box_title">Name:</td>
+            <td><span id="v_name">No file</span></td>
+        </tr>
+        <tr>
+            <td class="download_box_title">Size:</td>
+            <td><span id="v_size"></span></td>
+        </tr>
+        <tr id="v_image_size_tr">
+            <td class="download_box_title">Image Size:</td>
+            <td><span id="v_image_size"></span></td>
+        </tr>  
+        <tr id="v_image_tr">
+            <td class="download_box_title" style="vertical-align:top">ScreenShot:</td>
+            <td><img src="" id="v_image" style="width:100%;max-width:200px" events="onclick=popupImages"/></td>
+        </tr>
+        <tr id="v_desc_tr">
+            <td class="download_box_title" style="vertical-align:top">Description:</td>
+            <td><span id="v_description"></span></td>
+        </tr>     
+        <tr>
+            <td></td>
+            <td><input type="button" id="btn_download" value=" Download " events="onclick=onDownloadClick" /></td>
+        </tr>
+    </table>
+    <div id="error_msg" style="display: none"></div>
+</tpl>

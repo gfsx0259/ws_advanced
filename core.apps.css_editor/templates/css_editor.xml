@@ -1,0 +1,10 @@
+<tpl name="css_editor">
+    <div class="css_editor" id="css_editor">
+        <textarea id="editor" wrap="off"></textarea>
+    </div>
+
+    <div class="popup_buttons" id="bottom_toolbar"><div class="popup_buttons_wrapper">
+        <input type="button" class="float_right" value=" Cancel " events="onclick=onEditorCancelClick" />
+        <input type="button" class="float_right" value=" Save " events="onclick=onEditorSaveClick" />
+    </div></div>
+</tpl>
