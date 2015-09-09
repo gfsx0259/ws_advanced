@@ -11,7 +11,7 @@ core.apps.file_download = function(args) {
         description: "",
         chk_image : true
     }
-}
+};
 
 core.apps.file_download.prototype = {
 
@@ -54,7 +54,7 @@ core.apps.file_download.prototype = {
         this.$["v_size"].innerHTML = "Loading...";
         this.$["v_name"].innerHTML = "Loading...";
         this.isLoading = true;
-        p.dialog = "files";
+        p.dialog = "files_manager";
         core.transport.send("/controller.php", p, this.onServerResponce.bind(this));
     },
 
@@ -88,6 +88,6 @@ core.apps.file_download.prototype = {
         }
     }
     
-}
+};
 core.apps.file_download.extendPrototype(core.components.html_component);
 core.apps.file_download.extendPrototype(core.components.desktop_app);

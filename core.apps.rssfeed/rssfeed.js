@@ -1,7 +1,7 @@
 core.apps.rssfeed = function(args) {
 
     this.rssdatatime=new Date();
-    this.currentRSSContents='' 
+    this.currentRSSContents='';
 
     this.defaultProfile = {
         title: "",
@@ -13,12 +13,12 @@ core.apps.rssfeed = function(args) {
         show_item_description: true,
         refesh_time_interval: 0,
         items_per_page: 0
-   }
+   };
 
 
    this.loaded_url = "";
    this.data = false;
-}
+};
 
 
 core.apps.rssfeed.prototype = {
@@ -58,7 +58,7 @@ core.apps.rssfeed.prototype = {
             var p = {
                 dialog: "rssfeed",
                 url: this.profile["rss_feed_url"]
-            }        
+            };
             core.transport.send("/controller.php", p, this.setData.bind(this), "POST");
         } else {
             this.$["rss"].innerHTML = "";
@@ -97,7 +97,7 @@ core.apps.rssfeed.prototype = {
                     parent: this.$["pager_top"],
                     callback: this.setOffset.bind(this),
                     class_name: "pager"
-                }
+                };
                 this.pagers = { top: new core.objects.pager(p) };
                 p.parent = this.$["pager_bottom"];
                 this.pagers["bottom"] = new core.objects.pager(p);
@@ -189,6 +189,6 @@ core.apps.rssfeed.prototype = {
         this.$["rss"].innerHTML = html;
     }
 
-}
+};
 core.apps.rssfeed.extendPrototype(core.components.html_component);
 core.apps.rssfeed.extendPrototype(core.components.desktop_app);

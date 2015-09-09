@@ -1,4 +1,4 @@
-core.apps.image_editor = function() {}
+core.apps.image_editor = function() {};
 
 
 core.apps.image_editor.prototype = {
@@ -209,7 +209,7 @@ core.apps.image_editor.prototype = {
         this.$["inp_quart_angle"].value = 45;
         this.$["inp_radius"].value = 10;
 
-        this.$["inp_new_file"].value = this.getNewFileName(d.file)
+        this.$["inp_new_file"].value = this.getNewFileName(d.file);
 
         this.updatePreview();
     },
@@ -348,7 +348,7 @@ core.apps.image_editor.prototype = {
                 dialog: "image_editor",
                 act: "delete_tmp",
                 tmp_file: this.data.file
-            }
+            };
             core.transport.send("/controller.php", p);
             this.isTmpClean = true;
         }
@@ -363,7 +363,7 @@ core.apps.image_editor.prototype = {
         if(!new_file.length) {
             this.$["inp_new_file"].focus();
             this.showError("Wrong file name");
-            return;
+
         } else {
             desktop.setState("loading");
             var p = {
@@ -373,7 +373,7 @@ core.apps.image_editor.prototype = {
                 new_file: new_file,
                 type: this.$["inp_new_file_type"].value,
                 quality: this.$["inp_jpg_quality"].value
-            }
+            };
             core.transport.send("/controller.php", p, this.onFileMoveResponce.bind(this));
         }
     },
@@ -544,7 +544,7 @@ core.apps.image_editor.prototype = {
             top: t,
             width: w,
             height: h
-        }
+        };
         this.updateCropControls();
         this.hideElement("msg_error");
     },
@@ -582,7 +582,7 @@ core.apps.image_editor.prototype = {
         this.drag_ofs = {
             left: e.clientX,
             top: e.clientY
-        }
+        };
         this.drag_data = clone(this.crop_data);
 
         core.browser.element.disableSelection(document.body);
@@ -691,6 +691,6 @@ core.apps.image_editor.prototype = {
     }
 
     
-}
+};
 core.apps.image_editor.extendPrototype(core.components.html_component);
 core.apps.image_editor.extendPrototype(core.components.popup_app);

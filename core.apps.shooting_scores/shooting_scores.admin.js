@@ -47,7 +47,7 @@ core.apps.shooting_scores.extendPrototype({
             var r = {
                 dialog: "shooting_scores",
                 act: "get_data_keys_list"
-            }
+            };
             core.transport.send("/controller.php", r, this.onDataKeysResponse.bind(this));
         }
     },

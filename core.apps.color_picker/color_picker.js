@@ -1,54 +1,51 @@
-core.apps.color_picker = function() {
+core.apps.color_picker = function () {
     this.color = {}
-}
+};
 
 
 core.apps.color_picker.prototype = {
 
 
-    getTitle: function() {
+    getTitle: function () {
         return "Color picker";
     },
 
 
-    renderContent: function() {
+    renderContent: function () {
         this.displayTpl(this.$["content"], "color_picker");
-//        this.setElementOpacity("bar_overlay", 90);
     },
 
 
-    onShowContent: function() {
+    onShowContent: function () {
         var d = core.values.color_picker;
         this.callback = d.callback;
         this.setHexColor(this.validateHex(d.color) || "FF0000");
     },
 
 
-    onPopupOkClick: function(e) {
-        if(this.callback) {
+    onPopupOkClick: function (e) {
+        if (this.callback) {
             this.callback(this.color.hex);
         }
         desktop.hidePopupApp();
     },
 
 
-
     // map cursor drag
 
-    setMapPos: function(left, top) {
+    setMapPos: function (left, top) {
         var cur = this.$["map_cursor"];
         var ofs = {
             left: Math.ceil(cur.offsetWidth * 0.5) - 1,
             top: Math.ceil(cur.offsetHeight * 0.5) - 1
-        }
+        };
         cur.style.left = left - ofs.left + "px";
         cur.style.top = top - ofs.top + "px";
     },
 
 
-
-    onMapDragStart: function(e) {
-        if(this.isMapDragging) {
+    onMapDragStart: function (e) {
+        if (this.isMapDragging) {
             return;
         }
         this.isMapDragging = true;
@@ -61,19 +58,18 @@ core.apps.color_picker.prototype = {
     },
 
 
-    onMapDrag: function(e) {
+    onMapDrag: function (e) {
         e = core.browser.event.fix(e);
         var scroll = core.browser.getScroll();
         var el_pos = core.browser.element.getPosition(this.$["map"]);
 
         var l = e.clientX - el_pos.left;
         var t = e.clientY - el_pos.top + scroll.top;
-        if(l < 0) l = 0;
-        if(l > 255) l = 255;
-        if(t < 0) t = 0;
-        if(t > 255) t = 255;
+        if (l < 0) l = 0;
+        if (l > 255) l = 255;
+        if (t < 0) t = 0;
+        if (t > 255) t = 255;
 
-//        this.setMapPos(l, t);
         this.color.hsv.h = Math.round(360 * l / 255);
         this.color.hsv.v = 100 - Math.round(100 * t / 255);
         this.color.rgb = this.hsv2rgb(this.color.hsv);
@@ -81,25 +77,24 @@ core.apps.color_picker.prototype = {
         this.refresh();
     },
 
-    onMapDragEnd: function(e) {
+    onMapDragEnd: function (e) {
         core.browser.event.kill(e);
         this.isMapDragging = false;
         core.browser.event.pop();
     },
 
 
-
     // bar cursor drag
 
-    setBarPos: function(v) {
+    setBarPos: function (v) {
         var cur = this.$["bar_cursor"];
         var ofs = Math.floor(cur.offsetHeight * 0.5) - 1;
         cur.style.top = v - ofs + "px";
     },
 
 
-    onBarStartDrag: function(e) {
-        if(this.isBarDragging) {
+    onBarStartDrag: function (e) {
+        if (this.isBarDragging) {
             return;
         }
         this.isBarDragging = true;
@@ -112,17 +107,16 @@ core.apps.color_picker.prototype = {
     },
 
 
-    onBarDrag: function(e) {
+    onBarDrag: function (e) {
         e = core.browser.event.fix(e);
         var scroll = core.browser.getScroll();
         var el_pos = core.browser.element.getPosition(this.$["map"]);
         var t = e.clientY - el_pos.top + scroll.top;
-        if(t < 0) {
+        if (t < 0) {
             t = 0;
-        } else if(t > 255) {
+        } else if (t > 255) {
             t = 255;
         }
-//        this.setBarPos(t);
 
         this.color.hsv.s = 100 - Math.round(100 * t / 255);
         this.color.rgb = this.hsv2rgb(this.color.hsv);
@@ -130,19 +124,16 @@ core.apps.color_picker.prototype = {
         this.refresh();
     },
 
-    onBarDragEnd: function(e) {
+    onBarDragEnd: function (e) {
         core.browser.event.kill(e);
         this.isBarDragging = false;
         core.browser.event.pop();
     },
 
 
-
-
-
     // controls & inputs
 
-    updateInputs: function() {
+    updateInputs: function () {
         var c = this.color;
         this.$["inp_rgb_r"].value = c.rgb.r;
         this.$["inp_rgb_g"].value = c.rgb.g;
@@ -154,12 +145,12 @@ core.apps.color_picker.prototype = {
         this.$["inp_hex"].value = c.hex;
     },
 
-    
-    updateControls: function() {
+
+    updateControls: function () {
 //        this.setElementOpacity("map_overlay", 100 - this.color.hsv.s);
         this.setBarPos(Math.floor(255 * (100 - this.color.hsv.s) / 100));
         this.setMapPos(
-            Math.floor(255 * this.color.hsv.h / 360), 
+            Math.floor(255 * this.color.hsv.h / 360),
             Math.floor(255 * (100 - this.color.hsv.v) / 100)
         );
         this.$["preview"].style.background = "#" + this.color.hex;
@@ -171,14 +162,14 @@ core.apps.color_picker.prototype = {
     },
 
 
-    refresh: function() {
+    refresh: function () {
         this.updateInputs();
         this.updateControls();
     },
 
     // sys
 
-    setHexColor: function(c) {
+    setHexColor: function (c) {
         this.color.rgb = this.hex2rgb(c);
         this.color.hsv = this.rgb2hsv(this.color.rgb);
         this.color.hex = c;
@@ -187,31 +178,25 @@ core.apps.color_picker.prototype = {
     },
 
 
-    getColor: function() {
+    getColor: function () {
         return this.color;
     },
 
 
-    setHSV: function(c) {
+    setHSV: function (c) {
         this.color = {
             hsv: hsv,
             rgb: this.hsv2rgb(c)
-        }
+        };
         this.color.hex = this.rgb2hex(this.color.rgb);
     },
 
 
-
-
-
-
-
-
     // transform
 
-    hsv2rgb: function(hsv) {
-        rgb = {r:0, g:0, b:0};
-        
+    hsv2rgb: function (hsv) {
+        rgb = {r: 0, g: 0, b: 0};
+
         var h = hsv.h;
         var s = hsv.s;
         var v = hsv.v;
@@ -229,8 +214,8 @@ core.apps.color_picker.prototype = {
             h /= 60;
 
             // 100 scale
-            s = s/100;
-            v = v/100;
+            s = s / 100;
+            v = v / 100;
 
             var i = parseInt(h);
             var f = h - i;
@@ -279,15 +264,14 @@ core.apps.color_picker.prototype = {
     },
 
 
-
-    rgb2hsv: function(rgb) {
+    rgb2hsv: function (rgb) {
         var r = rgb.r / 255;
         var g = rgb.g / 255;
         var b = rgb.b / 255;
 
-        hsv = {h:0, s:0, v:0};
+        hsv = {h: 0, s: 0, v: 0};
 
-        var min = 0
+        var min = 0;
         var max = 0;
 
         if (r >= g && r >= b) {
@@ -321,7 +305,7 @@ core.apps.color_picker.prototype = {
                 hsv.h += 360;
             }
         }
-        
+
         hsv.s = parseInt(hsv.s * 100);
         hsv.v = parseInt(hsv.v * 100);
 
@@ -329,66 +313,64 @@ core.apps.color_picker.prototype = {
     },
 
 
-    rgb2hex: function(c) {
+    rgb2hex: function (c) {
         var r =
             (0x100 | c.r).toString(16).substr(1) +
             (0x100 | c.g).toString(16).substr(1) +
-            (0x100 | c.b).toString(16).substr(1)
+            (0x100 | c.b).toString(16).substr(1);
         return r.toUpperCase();
     },
 
 
-    hex2rgb: function(hex) {
+    hex2rgb: function (hex) {
         hex = this.validateHex(hex);
-        var r='00', g='00', b='00';
+        var r = '00', g = '00', b = '00';
 
-        if(hex.length == 6) {
-            r = hex.substring(0,2);
-            g = hex.substring(2,4);
-            b = hex.substring(4,6); 
+        if (hex.length == 6) {
+            r = hex.substring(0, 2);
+            g = hex.substring(2, 4);
+            b = hex.substring(4, 6);
         } else {
-            if(hex.length > 4) {
-                r = hex.substring(4,hex.length);
-                hex = hex.substring(0,4);
+            if (hex.length > 4) {
+                r = hex.substring(4, hex.length);
+                hex = hex.substring(0, 4);
             }
-            if(hex.length > 2) {
-                g = hex.substring(2,hex.length);
-                hex = hex.substring(0,2);
+            if (hex.length > 2) {
+                g = hex.substring(2, hex.length);
+                hex = hex.substring(0, 2);
             }
-            if(hex.length > 0) {
-                b = hex.substring(0,hex.length);
-            }                   
+            if (hex.length > 0) {
+                b = hex.substring(0, hex.length);
+            }
         }
-        
-        return { 
-            r: parseInt(r, 16), 
-            g: parseInt(g, 16), 
-            b: parseInt(b, 16) 
+
+        return {
+            r: parseInt(r, 16),
+            g: parseInt(g, 16),
+            b: parseInt(b, 16)
         }
     },
 
 
-    validateHex: function(hex) {
-        hex = new String(hex).toUpperCase();
+    validateHex: function (hex) {
+        hex = String(hex).toUpperCase();
         hex = hex.replace(/[^A-F0-9]/g, '');
-        if(hex.length < 6) {
+        if (hex.length < 6) {
             hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-        } else if(hex.length > 6) {
+        } else if (hex.length > 6) {
             hex = hex.substring(0, 6);
         }
         return hex;
     },
 
 
-
-
-    onHexChange: function(e) {
+    onHexChange: function (e) {
         var v = this.$["inp_hex"].value;
         v = this.validateHex(v);
         this.$["inp_hex"].value = v;
         this.setHexColor(v);
     }
 
-}
+};
 core.apps.color_picker.extendPrototype(core.components.html_component);
 core.apps.color_picker.extendPrototype(core.components.popup_app);

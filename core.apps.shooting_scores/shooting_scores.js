@@ -30,7 +30,7 @@ core.apps.shooting_scores = function(args) {
         }
     }
 
-}
+};
 
 
 core.apps.shooting_scores.prototype = {
@@ -171,7 +171,7 @@ core.apps.shooting_scores.prototype = {
             dialog: "shooting_scores",
             act: "get_rows",
             data_key: this.profile.data_key
-        }
+        };
         core.transport.send("/controller.php", r, this.onServerReponse.bind(this));
     },
 
@@ -687,6 +687,6 @@ core.apps.shooting_scores.prototype = {
     }
     */
 
-}
+};
 core.apps.shooting_scores.extendPrototype(core.components.html_component);
 core.apps.shooting_scores.extendPrototype(core.components.desktop_app);

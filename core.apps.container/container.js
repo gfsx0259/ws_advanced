@@ -5,7 +5,7 @@ core.apps.container = function(args) {
         app_style: ""
     }
 
-}
+};
 
 core.apps.container.prototype = {
 
@@ -20,6 +20,6 @@ core.apps.container.prototype = {
         this.setTitle(this.profile["title"]);
     }
 
-}
+};
 core.apps.container.extendPrototype(core.components.html_component);
 core.apps.container.extendPrototype(core.components.desktop_app);

@@ -6,7 +6,7 @@ core.apps.iframe = function(args) {
         height: 200,
         url: ""
     }
-}
+};
 
 core.apps.iframe.prototype = {
 
@@ -38,7 +38,7 @@ core.apps.iframe.prototype = {
     }
 
 
-}
+};
 
 core.apps.iframe.extendPrototype(core.components.html_component);
 core.apps.iframe.extendPrototype(core.components.desktop_app);

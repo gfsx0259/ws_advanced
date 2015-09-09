@@ -36,7 +36,7 @@
             <input type="hidden" id="course_instance_id"/>
             <input type="hidden" id="course_title"/>
             <input type="hidden" id="course_type"/>
-            <input type="hidden" id="course_amount" />
+            <input type="hidden" id="course_amount"/>
         </div>
         <!-- <div class="form-row" id="course_have_account">
             <label for="aXcelerate_account" class="w_100">Do you have an aXcelerate account?</label>
@@ -116,7 +116,8 @@
         <div class="form-row" id="course_cost" style="display: none">
             <label class="w_100">Course cost</label>
             <br/>
-            <span id="course_cost1"></span><span id="course_participants"></span>
+            <span id="course_cost1"></span>
+            <span id="course_participants"></span>
         </div>
     </div>
     <!-- <div id="axcelerate_current_user" class="arial" style="display: none">
@@ -144,7 +145,8 @@
             </div>
             <div class="form-row">
                 <div class="input_block w_20 fl">
-                    <input type="text" class="text w_100" id="payment_card_number" events="onchange=onCardNumberChange"/>
+                    <input type="text" class="text w_100" id="payment_card_number"
+                           events="onchange=onCardNumberChange"/>
                     <small>Credit card number</small>
                 </div>
                 <div style="clear: both"></div>
@@ -187,7 +189,8 @@
             <p>Please wait...</p>
         </div>
         <div class="form-row" style="display: none" id="course_succefffull_reg">
-            <p>You have successfully registered. Your Student ID is <span id="course_learner_id"></span>.</p>
+            <p>You have successfully registered. Your Student ID is<span id="course_learner_id"></span>.
+            </p>
         </div>
     </div>
     <span id="msg"></span>

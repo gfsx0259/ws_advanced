@@ -2,7 +2,7 @@ core.apps.css_editor = function() {
 
     core.values.site_css = null;
 
-}
+};
 
 
 
@@ -43,7 +43,7 @@ core.apps.css_editor.prototype = {
         var p = {
             dialog: "css_editor",
             act: "get"
-        }
+        };
         core.transport.send("/controller.php", p, this.onCSSData.bind(this));
     },
 
@@ -54,7 +54,7 @@ core.apps.css_editor.prototype = {
             return;
         }
         desktop.setState("normal");
-        core.values.site_css = r.data
+        core.values.site_css = r.data;
         this.$["editor"].value = core.values.site_css;
     },
 
@@ -71,7 +71,7 @@ core.apps.css_editor.prototype = {
             dialog: "css_editor",
             act: "set",
             css: this.$["editor"].value
-        }
+        };
         core.transport.send("/controller.php", p, this.onSetCSSResponce.bind(this));
     },
 
@@ -86,6 +86,6 @@ core.apps.css_editor.prototype = {
     }
 
 
-}
+};
 core.apps.css_editor.extendPrototype(core.components.html_component);
 core.apps.css_editor.extendPrototype(core.components.popup_app);

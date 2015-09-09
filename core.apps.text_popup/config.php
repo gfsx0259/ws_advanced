@@ -1,44 +1,54 @@
-<?
+<?php
 
-    $config["js_apps"]["core.apps.text_popup"] = array(
+$config["js_apps"]["core.apps.text_popup"] = array(
 
-        "content" => array(
-            USERTYPE_ADMIN => array(
-                "code" => array(
-                    "app.js",
-                    "app.admin.js",
-                    "text_popup.js"
-                ),
-                "templates" => array(
-                    "templates/text_popup.xml"
-                )
+    'general' => array(
+        'title' => 'Text popup',
+        'name' => 'text_popup',//should be like 3th part of folder
+        'version' => '1.0.0',
+        'icon' => 'icon.png',
+        'category' => CATEGORY_ADVANCED,
+        'description' => '',
+        'depends' => [
+            'document_manager'
+        ]
+    ),
+
+
+    "content" => array(
+        USERTYPE_ADMIN => array(
+            "code" => array(
+                "app.js",
+                "app.admin.js",
+                "text_popup.js"
             ),
-
-
-            USERTYPE_CONTRIBUTOR => array(
-                "code" => array(
-                    "app.js",
-                    "text_popup.js"
-                ),
-                "templates" => array(
-                    "templates/text_popup.xml"
-                )
-            ),
-
-
-            USERTYPE_GUEST => array(
-                "code" => array(
-                    "app.js",
-                    "text_popup.js"
-                ),
-                "templates" => array(
-                    "templates/text_popup.xml"
-                )
+            "templates" => array(
+                "templates/text_popup.xml"
             )
+        ),
 
+
+        USERTYPE_CONTRIBUTOR => array(
+            "code" => array(
+                "app.js",
+                "text_popup.js"
+            ),
+            "templates" => array(
+                "templates/text_popup.xml"
+            )
+        ),
+
+
+        USERTYPE_GUEST => array(
+            "code" => array(
+                "app.js",
+                "text_popup.js"
+            ),
+            "templates" => array(
+                "templates/text_popup.xml"
+            )
         )
 
     )
 
-
-?>
+);

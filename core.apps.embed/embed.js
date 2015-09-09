@@ -6,7 +6,7 @@ core.apps.embed = function(args) {
         code: "",
         embed_height: "300"
     }
-}
+};
 
 
 core.apps.embed.prototype = {
@@ -52,6 +52,6 @@ core.apps.embed.prototype = {
     
     
 
-}
+};
 core.apps.embed.extendPrototype(core.components.html_component);
 core.apps.embed.extendPrototype(core.components.desktop_app);

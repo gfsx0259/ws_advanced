@@ -1,27 +1,37 @@
 <?
 
-    $config["js_apps"]["core.apps.embed"] = array(
+$config["js_apps"]["core.apps.embed"] = array(
 
-        "content" => array(
-            USERTYPE_ADMIN => array(
-                "code" => array(
-                    "embed.js",
-                    "embed.admin.js"
-                )
-            ),
-
-
-            USERTYPE_CONTRIBUTOR => array(
-                "code" => array("embed.js")
-            ),
+    'general' => array(
+        'title' => 'Embed object',
+        'name' => 'embed',//should be like 3th part of folder
+        'version' => '1.0.0',
+        'icon' => 'icon.png',
+        'category' => CATEGORY_ADVANCED,
+        'description' => ''
+    ),
 
 
-            USERTYPE_GUEST => array(
-                "code" => array("embed.js")
+    "content" => array(
+        USERTYPE_ADMIN => array(
+            "code" => array(
+                "embed.js",
+                "embed.admin.js"
             )
-        )
+        ),
 
+
+        USERTYPE_CONTRIBUTOR => array(
+            "code" => array("embed.js")
+        ),
+
+
+        USERTYPE_GUEST => array(
+            "code" => array("embed.js")
+        )
     )
+
+)
 
 
 ?>

@@ -1,4 +1,4 @@
-core.apps.dialog_prompt = function() {}
+core.apps.dialog_prompt = function() {};
 
 
 core.apps.dialog_prompt.prototype = {
@@ -36,6 +36,6 @@ core.apps.dialog_prompt.prototype = {
         desktop.hidePopupApp();
     }
 
-}
+};
 core.apps.dialog_prompt.extendPrototype(core.components.html_component);
 core.apps.dialog_prompt.extendPrototype(core.components.popup_app);

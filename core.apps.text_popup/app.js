@@ -14,7 +14,7 @@ core.apps.text_popup = function(args) {
         popup_height: 300
     }
 
-}
+};
 
 
 core.apps.text_popup.prototype = {
@@ -78,7 +78,7 @@ core.apps.text_popup.prototype = {
             left: Math.round((wsize.width - this.profile["popup_width"]) * 0.5) - 20,
             width: this.profile["popup_width"],
             height: this.profile["popup_height"]
-        }
+        };
         this.popup.setPosition(pos);
         this.popup.show("Loading...");
         core.data.texts.get(this.profile["popup_doc_id"], this.setPopupDoc.bind(this));
@@ -99,6 +99,6 @@ core.apps.text_popup.prototype = {
     }
 
 
-}
+};
 core.apps.text_popup.extendPrototype(core.components.html_component);
 core.apps.text_popup.extendPrototype(core.components.desktop_app);
