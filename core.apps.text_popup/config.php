@@ -10,7 +10,7 @@ $config["js_apps"]["core.apps.text_popup"] = array(
         'category' => CATEGORY_ADVANCED,
         'description' => '',
         'depends' => [
-            'document_manager'
+            //'texts_manager' because it's core anyway
         ]
     ),
 
