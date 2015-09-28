@@ -6,7 +6,6 @@ $config["js_apps"]["core.apps.container"] = array(
         'title' => 'Container',
         'name' => 'container',//should be like 3th part of folder
         'version' => '1.0.0',
-        'icon' => 'icon.png',
         'category' => CATEGORY_ADVANCED,
         'description' => ''
     ),
