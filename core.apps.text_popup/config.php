@@ -6,11 +6,10 @@ $config["js_apps"]["core.apps.text_popup"] = array(
         'title' => 'Text popup',
         'name' => 'text_popup',//should be like 3th part of folder
         'version' => '1.0.0',
-        'icon' => 'icon.png',
         'category' => CATEGORY_ADVANCED,
         'description' => '',
         'depends' => [
-            'document_manager'
+            //'texts_manager' because it's core anyway
         ]
     ),
 

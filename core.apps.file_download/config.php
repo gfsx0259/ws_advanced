@@ -7,7 +7,6 @@ $config["js_apps"]["core.apps.file_download"] = array(
         'name' => 'file_download',//should be like 3th part of folder
         'version' => '1.0.0',
         'category' => CATEGORY_ADVANCED,
-        'icon' => 'icon.png',
         'description' => 'Allow to download user files',
         'depends' => [
             'forms_manager',
